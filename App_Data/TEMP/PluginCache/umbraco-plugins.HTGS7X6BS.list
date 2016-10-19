@@ -332,4 +332,13 @@
     <add type="Umbraco.Web.HealthCheck.Checks.Security.HttpsCheck, umbraco, Version=1.0.6079.16195, Culture=neutral, PublicKeyToken=null" />
     <add type="Umbraco.Web.HealthCheck.Checks.DataIntegrity.XmlDataIntegrityHealthCheck, umbraco, Version=1.0.6079.16195, Culture=neutral, PublicKeyToken=null" />
   </baseType>
+  <baseType type="Umbraco.Web.Editors.IEditorValidator" resolutionType="FindAllTypes">
+    <add type="Umbraco.ModelsBuilder.Validation.ContentTypeModelValidator, Umbraco.ModelsBuilder, Version=3.0.4.0, Culture=neutral, PublicKeyToken=null" />
+    <add type="Umbraco.ModelsBuilder.Validation.MediaTypeModelValidator, Umbraco.ModelsBuilder, Version=3.0.4.0, Culture=neutral, PublicKeyToken=null" />
+    <add type="Umbraco.ModelsBuilder.Validation.MemberTypeModelValidator, Umbraco.ModelsBuilder, Version=3.0.4.0, Culture=neutral, PublicKeyToken=null" />
+  </baseType>
+  <baseType type="umbraco.cms.businesslogic.macro.IMacroEngine" resolutionType="FindAllTypes">
+    <add type="Umbraco.Web.Macros.PartialViewMacroEngine, umbraco, Version=1.0.6079.16195, Culture=neutral, PublicKeyToken=null" />
+    <add type="umbraco.MacroEngines.RazorMacroEngine, umbraco.MacroEngines, Version=1.0.6079.16198, Culture=neutral, PublicKeyToken=null" />
+  </baseType>
 </plugins>

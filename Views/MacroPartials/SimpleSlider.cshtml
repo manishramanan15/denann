@@ -1,0 +1,61 @@
+@inherits Umbraco.Web.Macros.PartialViewMacroPage
+@using System.Web;
+@using System.Text;
+@{
+    dynamic sliderData = (!String.IsNullOrEmpty(Model.MacroParameters["SliderData"].ToString())) ?
+        Json.Decode((dynamic)HttpUtility.HtmlDecode(Model.MacroParameters["SliderData"].ToString())) : null;
+}
+
+@{ int count = 0;
+    var sb = new StringBuilder();
+    <div id="myCarousel" class="carousel slide" data-ride="carousel">
+        <div class="carousel-inner">
+            @foreach (var slide in sliderData)
+            {
+
+
+                var className = count == 0 ? "item active" : "item";
+                if (count == 0)
+                {
+                    sb.AppendFormat("<li data-target=\"#myCarousel\" data-slide-to=\"{0}\" class=\"active\" data-original-title=\"\" title=\"\"></li>", count);
+                }
+                else
+                {
+                    sb.AppendFormat("<li data-target=\"#myCarousel\" data-slide-to=\"{0}\" data-original-title=\"\" title=\"\"></li>", count);
+                }
+                count++;
+
+                <div class="@className">
+                    <img src="@slide.img" alt="@slide.name" class="img-responsive">
+                    <div class="container">
+
+                        <div class="carousel-caption">
+                            <div class="carousel-text">
+                                <h1 class="animated bounceInRight">@slide.name</h1>
+                                <ul class="list-unstyled carousel-list">
+                                    <li class="animated bounceInLeft" data-original-title="" title="">@slide.summary</li>
+                                </ul>
+                                <a class="da_blog_read_btn animated bounceInUp" href="#" role="button">Read More</a>
+                                <div class="text-overlay"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            }
+
+        </div>
+        @if (count > 1)
+        {
+            <ol class="carousel-indicators">
+                @Html.Raw(sb.ToString());
+            </ol>
+            <a class="left carousel-control" href="#myCarousel" data-slide="prev"><span class="glyphicon glyphicon-chevron-left"></span></a>
+            <a class="right carousel-control" href="#myCarousel" data-slide="next"><span class="glyphicon glyphicon-chevron-right"></span></a>
+        }
+        <div class="da_slider_shadow"></div>
+    </div>
+}
+
+
+
+

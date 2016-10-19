@@ -3,4 +3,16 @@
     Layout = "Master.cshtml";
 }
 
-@CurrentPage.GetGridHtml("content", "fanoe")
+<main class="da-masthead" id="content" tabindex="-1">
+    <div class="container">
+        <span class="da-booticon da-booticon-lg da-booticon-outline">@CurrentPage._siteShortName</span>
+        <p class="lead">
+            @CurrentPage.siteDescription 
+        </p>
+    </div>
+</main>
+
+@Html.Raw(umbraco.library.RenderMacroContent(CurrentPage.slider, CurrentPage.Id))
+
+
+@CurrentPage.GetGridHtml("content", "home")

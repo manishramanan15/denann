@@ -19,7 +19,7 @@ using Umbraco.ModelsBuilder;
 using Umbraco.ModelsBuilder.Umbraco;
 
 [assembly: PureLiveAssembly]
-[assembly:ModelsBuilderAssembly(PureLive = true, SourceHash = "d185df4029cb33e8")]
+[assembly:ModelsBuilderAssembly(PureLive = true, SourceHash = "97ef4cd813bec3d2")]
 [assembly:System.Reflection.AssemblyVersion("0.0.0.1")]
 
 namespace Umbraco.Web.PublishedContentModels
@@ -138,6 +138,15 @@ namespace Umbraco.Web.PublishedContentModels
 		}
 
 		///<summary>
+		/// Footer Description: Footer Text
+		///</summary>
+		[ImplementPropertyType("footerDescription")]
+		public IHtmlString FooterDescription
+		{
+			get { return this.GetPropertyValue<IHtmlString>("footerDescription"); }
+		}
+
+		///<summary>
 		/// Site Description
 		///</summary>
 		[ImplementPropertyType("siteDescription")]
@@ -156,12 +165,30 @@ namespace Umbraco.Web.PublishedContentModels
 		}
 
 		///<summary>
+		/// SiteShortName: Give two letters name
+		///</summary>
+		[ImplementPropertyType("siteShortName")]
+		public string SiteShortName
+		{
+			get { return this.GetPropertyValue<string>("siteShortName"); }
+		}
+
+		///<summary>
 		/// Site Title
 		///</summary>
 		[ImplementPropertyType("siteTitle")]
 		public string SiteTitle
 		{
 			get { return this.GetPropertyValue<string>("siteTitle"); }
+		}
+
+		///<summary>
+		/// Slider
+		///</summary>
+		[ImplementPropertyType("slider")]
+		public IHtmlString Slider
+		{
+			get { return this.GetPropertyValue<IHtmlString>("slider"); }
 		}
 	}
 

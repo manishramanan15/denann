@@ -7,17 +7,20 @@
     var naviLevel = home.Children.First().Level;
     
     @* Add in level for a CSS hook *@
-    <ul class="level-@naviLevel">            
+    <ul class="nav navbar-nav level-@naviLevel">            
         @* For each child page under the home node *@
         @foreach (var childPage in home.Children)
         {   
             if (childPage.Children.Any())
             {                    
-                <li class="has-child @(childPage.IsAncestorOrSelf(CurrentPage) ? "selected" : null)">
-					@if(childPage.DocumentTypeAlias == "LandingPage") 
-					{
-                    	<span>@childPage.Name</span>
-						@childPages(childPage.Children)
+                <li class="dropdown @(childPage.IsAncestorOrSelf(CurrentPage) ? "selected" : null)">
+					@if (childPage.DocumentTypeAlias == "LandingPage")
+                    {
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                            @childPage.Name 
+                            <span class="caret"></span>
+                        </a>
+                    	@childPages(childPage.Children)
 					} else {
 						<a href="@childPage.Url">@childPage.Name</a>
 					}
@@ -42,7 +45,7 @@
         var naviLevel = pages.First().Level;
         
         @* Add in level for a CSS hook *@
-        <ul class="sublevel level-@(naviLevel)">
+        <ul class="dropdown-menu level-@(naviLevel)">
             @foreach (var page in pages)
             {
                 <li>
