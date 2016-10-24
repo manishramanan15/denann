@@ -8,6 +8,8 @@
 
 @{ int count = 0;
     var sb = new StringBuilder();
+    string style = "height:400px;";
+
     <div id="myCarousel" class="carousel slide" data-ride="carousel">
         <div class="carousel-inner">
             @foreach (var slide in sliderData)
@@ -26,7 +28,7 @@
                 count++;
 
                 <div class="@className">
-                    <img src="@slide.img" alt="@slide.name" class="img-responsive">
+                    <img src="@string.Format("{0}?height=500",slide.img)" alt="@slide.name" class="img-responsive">
                     <div class="container">
 
                         <div class="carousel-caption">

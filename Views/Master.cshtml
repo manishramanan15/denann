@@ -1,12 +1,21 @@
 ﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage
 @{
     Layout = null;
-	var home = @CurrentPage.Site();
+    var home = @CurrentPage.Site();
 }
 
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+<head>
+    <!-- Google Tag Manager -->
+    <script>
+        (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+        new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+        j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+        'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+        })(window, document, 'script', 'dataLayer', 'GTM-PGNJ28');
+    </script>
+    <!-- End Google Tag Manager -->
 
     <!-- Meta tags -->
     <meta charset="utf-8">
@@ -14,84 +23,72 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="@CurrentPage.siteDescription">
 
-    <title>@CurrentPage.Name | @CurrentPage._siteTitle</title>
-	
-      <!-- Latest compiled and minified CSS -->
-      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous" />
+    <title>@CurrentPage._siteTitle | @CurrentPage.Name</title>
 
-      <!-- Optional theme -->
-      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous" />
+    @{ Html.RenderPartial("Styles");}
+</head>
 
-      <!-- Font Awesome -->
-      <link rel="stylesheet" href="/css/font-awesome.min.css" />
+<body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript>
+        <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PGNJ28"
+                height="0" width="0" style="display:none;visibility:hidden"></iframe>
+    </noscript>
+    <!-- End Google Tag Manager (noscript) -->
 
-      <!-- Theme Animate -->
-      <link rel="stylesheet" href="/css/theme-animtae.css" />
+    <header class="da-nav navbar navbar-static-top">
+        <div class="container">
+            <div class="navbar-header">
 
-      <!-- Custom Css -->
-      <link rel="stylesheet" href="/css/custom.css" />
+                <button aria-controls="bs-navbar" aria-expanded="false" class="collapsed navbar-toggle" data-target="#bs-navbar" data-toggle="collapse" type="button">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a href="@home.Url" class="navbar-brand">
 
-    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-      <script src="//oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
-      <script src="//oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-    <![endif]-->
-  </head>
+                    <span class="da-icon">@CurrentPage._siteShortName</span>
+                </a>
+            </div>
+            <nav class="collapse navbar-collapse" id="bs-navbar">
+                @{ Html.RenderPartial("MainNavigation"); }
 
-  <body>
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="facebook" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Facebook"><a href="http://localhost/denann/#"><i class="fa fa-facebook"></i></a></li>
+                    <li class="twitter" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Twitter"><a href="http://localhost/denann/#"><i class="fa fa-twitter"></i></a></li>
 
-      <header class="da-nav navbar navbar-static-top">
-          <div class="container">
-              <div class="navbar-header">
+                    <li class="linkedin" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Linkedin"><a href="http://localhost/denann/#"><i class="fa fa-linkedin"></i></a></li>
+                    <li class="youtube" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Youtube"><a href="http://localhost/denann/#"><i class="fa fa-youtube"></i></a></li>
+                    <li class="twitter" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="gplus"><a href="http://localhost/denann/#"><i class="fa fa-google-plus"></i></a></li>
+                    <li class="facebook" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="instagram"><a href="http://localhost/denann/#"><i class="fa fa-instagram"></i></a></li>
+                </ul>
 
-                  <button aria-controls="bs-navbar" aria-expanded="false" class="collapsed navbar-toggle" data-target="#bs-navbar" data-toggle="collapse" type="button">
-                      <span class="sr-only">Toggle navigation</span>
-                      <span class="icon-bar"></span>
-                      <span class="icon-bar"></span>
-                      <span class="icon-bar"></span>
-                  </button>
-                  <a href="@home.Url" class="navbar-brand">
+            </nav>
+        </div>
 
-                      <span class="da-icon">@CurrentPage._siteShortName</span>
-                  </a>
-              </div>
-              <nav class="collapse navbar-collapse" id="bs-navbar">
-                  @{ Html.RenderPartial("MainNavigation"); }
+    </header>
 
-                  <ul class="nav navbar-nav navbar-right">
-                      <li class="facebook" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Facebook"><a href="http://localhost/denann/#"><i class="fa fa-facebook"></i></a></li>
-                      <li class="twitter" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Twitter"><a href="http://localhost/denann/#"><i class="fa fa-twitter"></i></a></li>
-
-                      <li class="linkedin" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Linkedin"><a href="http://localhost/denann/#"><i class="fa fa-linkedin"></i></a></li>
-                      <li class="youtube" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Youtube"><a href="http://localhost/denann/#"><i class="fa fa-youtube"></i></a></li>
-                      <li class="twitter" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="gplus"><a href="http://localhost/denann/#"><i class="fa fa-google-plus"></i></a></li>
-                      <li class="facebook" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="instagram"><a href="http://localhost/denann/#"><i class="fa fa-instagram"></i></a></li>
-                  </ul>
-
-              </nav>
-          </div>
-
-      </header>
- 
-   
-
-	
     @RenderBody()
 
+    <div class="row clearfix">
+        <div class="col-md-12 column">
+            <div>
+                <hr />
+            </div>
+        </div>
+    </div>
     <footer class="da-footer">
-      <div class="container">
-          @{ Html.RenderPartial("BottomNavigation"); }
+        <div class="container">
+            @{ Html.RenderPartial("BottomNavigation"); }
             @CurrentPage._footerDescription
-      </div>
+        </div>
     </footer>
-    
-    <!-- Javascripts -->
-      <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-      <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 
-      <!-- Latest compiled and minified JavaScript -->
-      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 
-  </body>
+    @{ Html.RenderPartial("Scripts");}
+
+
+    @{ Html.RenderPartial("Google");}
+</body>
 </html>
