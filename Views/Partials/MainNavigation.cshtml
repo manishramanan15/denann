@@ -9,7 +9,7 @@
     @* Add in level for a CSS hook *@
     <ul class="nav navbar-nav level-@naviLevel">            
         @* For each child page under the home node *@
-        @foreach (var childPage in home.Children)
+        @foreach (var childPage in home.Children.Where("Visible"))
         {   
             if (childPage.Children.Any())
             {                    
@@ -20,7 +20,7 @@
                             @childPage.Name 
                             <span class="caret"></span>
                         </a>
-                    	@childPages(childPage.Children)
+                    	@childPages(childPage.Children.Where("Visible"))
 					} else {
 						<a href="@childPage.Url">@childPage.Name</a>
 					}
