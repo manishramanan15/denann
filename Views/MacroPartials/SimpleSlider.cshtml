@@ -14,6 +14,7 @@
             @foreach (var slide in sliderData)
             {
 
+                var link = slide.link;
 
                 var className = count == 0 ? "item active" : "item";
                 if (count == 0)
@@ -36,7 +37,9 @@
                                 <ul class="list-unstyled carousel-list">
                                     <li class="animated bounceInLeft" data-original-title="" title="">@slide.summary</li>
                                 </ul>
-                                <a class="da_blog_read_btn animated bounceInUp" href="#" role="button">Read More</a>
+                                @if (link != null)
+                                { <a class="da_blog_read_btn animated bounceInUp" href="@umbraco.library.NiceUrl(link.id) " role="button">Read More</a> }
+                                
                                 <div class="text-overlay"></div>
                             </div>
                         </div>
