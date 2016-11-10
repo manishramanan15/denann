@@ -98,16 +98,6 @@
             tick,
             percentTime;
 
-        //Init the carousel
-        $("#owl-demo").owlCarousel({
-            slideSpeed: 500,
-            paginationSpeed: 500,
-            singleItem: true,
-            afterInit: progressBar,
-            afterMove: moved,
-            startDragging: pauseOnDragging
-        });
-
         //Init progressBar where elem is $("#owl-demo")
         function progressBar(elem) {
             $elem = elem;
@@ -172,12 +162,5 @@
             rewindSpeed: 500
         });
 
-        //uncomment this to make pause on mouseover 
-        // $elem.on('mouseover',function(){
-        //   isPause = true;
-        // })
-        // $elem.on('mouseout',function(){
-        //   isPause = false;
-        // })
 
     });
