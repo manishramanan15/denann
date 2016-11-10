@@ -163,6 +163,15 @@
             start();
         }
 
+        $("#owl-example").owlCarousel({
+            navigation: true,
+            slideSpeed: 300,
+            paginationSpeed: 400,
+            singleItem: true,
+            pagination: false,
+            rewindSpeed: 500
+        });
+
         //uncomment this to make pause on mouseover 
         // $elem.on('mouseover',function(){
         //   isPause = true;
