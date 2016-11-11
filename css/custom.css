@@ -977,7 +977,7 @@ Responsive navbar-brand image CSS
     width: 98%;
     height: 8em;
     padding: 1em;
-    background: rgba(22,18,35,0.87);
+    background: rgba(22,18,35,0.35);
     border-radius: 4px;
     color: white;
 }
