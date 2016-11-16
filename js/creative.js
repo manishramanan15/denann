@@ -61,7 +61,7 @@
             tError: '<a href="%url%">The image #%curr%</a> could not be loaded.',
             titleSrc: function (item) {
                 var data = $(item.el).data();
-                if (data.description) {
+                if (data.description && data.description!='') {
                     return '<p>' + data.description + ' <a href="' + data.url + '">More<i class="fa fa-icon fa-external-link"></i></a></p>';
                 }
                 else {
