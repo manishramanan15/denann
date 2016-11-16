@@ -1,8 +1,8 @@
-(function($) {
+(function ($) {
     "use strict"; // Start of use strict
 
     // jQuery for page scrolling feature - requires jQuery Easing plugin
-    $('a.page-scroll').bind('click', function(event) {
+    $('a.page-scroll').bind('click', function (event) {
         var $anchor = $(this);
         $('html, body').stop().animate({
             scrollTop: ($($anchor.attr('href')).offset().top - 50)
@@ -17,7 +17,7 @@
     });
 
     // Closes the Responsive Menu on Menu Item Click
-    $('.navbar-collapse ul li a').click(function() {
+    $('.navbar-collapse ul li a').click(function () {
         $('.navbar-toggle:visible').click();
     });
 
@@ -61,8 +61,13 @@
             tError: '<a href="%url%">The image #%curr%</a> could not be loaded.',
             titleSrc: function (item) {
                 var data = $(item.el).data();
-                if (data.description === 'undefined' || data.url === 'undefined') return '';
-                return '<p>' + data.description + ' <a href="' + data.url + '">More<i class="fa fa-icon fa-external-link"></i></a></p>';
+                if (data.description) {
+                    return '<p>' + data.description + ' <a href="' + data.url + '">More<i class="fa fa-icon fa-external-link"></i></a></p>';
+                }
+                else {
+                    return '';
+                }
+
             }
         }
     });
