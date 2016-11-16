@@ -60,10 +60,8 @@
         image: {
             tError: '<a href="%url%">The image #%curr%</a> could not be loaded.',
             titleSrc: function (item) {
-                debugger;
-                var data = $(item).data();
-
-                return '<p>'+data.description+'</p>' ;
+                var data = $(item.el).data();
+                return '<p>' + data.description + ' <a href="' + data.url + '">More<i class="fa fa-icon fa-external-link"></i></a></p>';
             }
         }
     });
