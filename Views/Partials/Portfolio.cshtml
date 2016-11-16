@@ -1,0 +1,37 @@
+@inherits Umbraco.Web.Mvc.UmbracoTemplatePage
+<section class="no-padding" id="@CurrentPage.Name.ToLower()">
+    <div class="container-fluid">
+        <div class="row no-gutter popup-gallery">
+            @{
+
+                foreach (var childPage in CurrentPage.Children.Where("Visible"))
+                {
+                    var img = Umbraco.Media(childPage.GetPropertyValue("backgroundImage"));
+                    var title = childPage.GetPropertyValue("title");
+                    var shortdes = childPage.GetPropertyValue("shortDescription");
+                    <div class="col-lg-6 col-sm-8">
+                        <a href="@img.Url" data-title="@title" data-url="@umbraco.library.NiceUrl(childPage.Id)" data-description="@shortdes"  class="portfolio-box">
+                            <img src="@img.Url" data-title="@title" data-url="@umbraco.library.NiceUrl(childPage.Id)" data-description="@shortdes" class="img-responsive" alt="@img.Name">
+                            <div class="portfolio-box-caption">
+                                <div class="portfolio-box-caption-content">
+                                    <div class="project-category text-faded">
+                                        @title
+                                    </div>
+                                    <div class="project-name">
+                                        @shortdes
+
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+
+
+
+                }
+
+            }
+        </div>
+
+    </div>
+</section>

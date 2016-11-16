@@ -1,0 +1,63 @@
+@inherits Umbraco.Web.Mvc.UmbracoTemplatePage
+@{ 
+    var isHomePage = CurrentPage.Name == "Home";
+    var home = isHomePage ? CurrentPage : CurrentPage.Site();
+ }
+
+@if (home.Children.Any())
+{
+
+    @* Add in level for a CSS hook *@
+    <ul class="nav navbar-nav navbar-left">
+        @* For each child page under the home node *@
+        @foreach (var childPage in home.Children)
+        {
+            string url = isHomePage ? string.Format("#{0}", childPage.Name.ToLower()) : umbraco.library.NiceUrl(childPage.Id);
+
+            <li>
+                <a href="@url">@childPage.Name</a>
+            </li>
+        }
+    </ul>
+}
+
+
+<ul class="nav navbar-nav navbar-right">
+    @if (!String.IsNullOrEmpty(CurrentPage._facebookLink))
+    {
+        <li class="facebook" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Facebook"><a style="font-size:large;" href="@CurrentPage._facebookLink"><i class="fa fa-facebook"></i></a></li>
+    }
+
+    @if (!String.IsNullOrEmpty(CurrentPage._twitterLink))
+    {
+        <li class="twitter" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Twitter"><a style="font-size:large;" href="@CurrentPage._twitterLink"><i class="fa fa-twitter"></i></a></li>
+    }
+
+    @if (!String.IsNullOrEmpty(CurrentPage._pinterest))
+    {
+
+        <li class="pinterest" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Pintrest"><a style="font-size:large;" href="@CurrentPage._pinterest"><i class="fa fa-pinterest"></i></a></li>
+    }
+
+    @if (!String.IsNullOrEmpty(CurrentPage._linkedInLink))
+    {
+
+        <li class="linkedin" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Linkedin"><a style="font-size:large;" href="@CurrentPage._linkedInLink"><i class="fa fa-linkedin"></i></a></li>
+    }
+
+
+    @if (!String.IsNullOrEmpty(CurrentPage._instagramLink))
+    {
+
+        <li class="instagram" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="instagram"><a style="font-size:large;" href="@CurrentPage._instagramLink"><i class="fa fa-instagram"></i></a></li>
+    }
+
+
+
+    @if (!String.IsNullOrEmpty(CurrentPage._youtubeLink))
+    {
+
+        <li class="youtube" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Youtube"><a style="font-size:large;" href="@CurrentPage._youtubeLink"><i class="fa fa-youtube"></i></a></li>
+    }
+
+</ul>

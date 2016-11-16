@@ -1,0 +1,13 @@
+﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage<ContentModels.Home>
+@using ContentModels = Umbraco.Web.PublishedContentModels;
+@{
+    Layout = "Master.cshtml";
+}
+
+
+@{
+    foreach (var child in Model.Content.Children)
+    {
+        Html.RenderPartial(child.Name, child);
+    }
+}

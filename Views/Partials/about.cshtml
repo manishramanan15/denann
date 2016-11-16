@@ -1,0 +1,16 @@
+@inherits Umbraco.Web.Mvc.UmbracoTemplatePage
+
+
+    @* Add in level for a CSS hook *@
+    <section class="bg-primary" id="@CurrentPage.Name.ToLower()">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2 text-center">
+                    <h2 class="section-heading">@CurrentPage.ShortDescription</h2>
+                    <hr class="light">
+                    <p class="text-faded">@CurrentPage.Description</p>
+                    <a href="#services" class="page-scroll btn btn-default btn-xl sr-button">@CurrentPage.NextPageText</a>
+                </div>
+            </div>
+        </div>
+    </section>

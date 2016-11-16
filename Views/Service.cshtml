@@ -1,0 +1,17 @@
+﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage<ContentModels.Service>
+@using ContentModels = Umbraco.Web.PublishedContentModels;
+@{
+    Layout = "Master.cshtml";
+}
+<section class="bg-primary" id="@CurrentPage.Id">
+    <div class="container">
+        <div class="row">
+            @CurrentPage.BodyContent
+        </div>
+    </div>
+</section>
+@{
+    var node = Model.Content.AncestorOrSelf(2).Children.Where("Name = \"Contact\"").FirstOrDefault();
+    Html.RenderPartial("Contact", node);
+
+}

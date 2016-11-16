@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<umbPackage>
+  <files>
+    <file>
+      <guid>InfoCaster.Umbraco.UrlTracker.dll</guid>
+      <orgPath>/bin</orgPath>
+      <orgName>InfoCaster.Umbraco.UrlTracker.dll</orgName>
+    </file>
+    <file>
+      <guid>InfoCaster.Umbraco.UrlTracker.pdb</guid>
+      <orgPath>/bin</orgPath>
+      <orgName>InfoCaster.Umbraco.UrlTracker.pdb</orgName>
+    </file>
+  </files>
+  <info>
+    <package>
+      <name>Url Tracker</name>
+      <version>3.11</version>
+      <license url="http://www.opensource.org/licenses/mit-license.php">MIT license</license>
+      <url>http://our.umbraco.org/projects/developer-tools/301-url-tracker</url>
+      <requirements>
+        <major>3</major>
+        <minor>0</minor>
+        <patch>0</patch>
+      </requirements>
+    </package>
+    <author>
+      <name>Stefan Kip</name>
+      <website>http://www.infocaster.net/</website>
+    </author>
+    <readme><![CDATA[Please visit http://our.umbraco.org/projects/developer-tools/301-url-tracker for the readme.]]></readme>
+  </info>
+  <DocumentTypes />
+  <Templates />
+  <Stylesheets />
+  <Macros />
+  <DictionaryItems />
+  <Languages />
+  <DataTypes />
+  <control>/Umbraco/UrlTracker/InfoCaster.Umbraco.UrlTracker.UI.Installer.UrlTrackerInstaller.ascx</control>
+</umbPackage>

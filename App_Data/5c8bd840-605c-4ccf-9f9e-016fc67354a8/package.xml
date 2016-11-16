@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<umbPackage>
+  <info>
+    <package>
+      <name>Epiphany.SeoMetadata</name>
+      <version>0.4.0</version>
+      <license url="http://opensource.org/licenses/MIT">MIT</license>
+      <url>https://github.com/ryanlewis/seo-metadata</url>
+      <requirements>
+        <major>0</major>
+        <minor>0</minor>
+        <patch>0</patch>
+      </requirements>
+    </package>
+    <author>
+      <name>Ryan Lewis</name>
+      <website>http://ryanl.me</website>
+    </author>
+    <readme><![CDATA[Check out github.com/ryanlewis/seo-metadata for full documentation]]></readme>
+  </info>
+  <DocumentTypes />
+  <Templates />
+  <Stylesheets />
+  <Macros />
+  <DictionaryItems />
+  <Languages />
+  <DataTypes />
+  <control />
+  <Actions />
+  <files>
+    
+    <file>
+      <guid>epiphany.seo.metadata.css.css</guid>
+      <orgPath>/App_Plugins/Epiphany.SeoMetadata/css</orgPath>
+      <orgName>epiphany.seo.metadata.css</orgName>
+    </file>
+    
+    <file>
+      <guid>epiphany.seo.metadata.js.js</guid>
+      <orgPath>/App_Plugins/Epiphany.SeoMetadata/js</orgPath>
+      <orgName>epiphany.seo.metadata.js</orgName>
+    </file>
+    
+    <file>
+      <guid>package.manifest.manifest</guid>
+      <orgPath>/App_Plugins/Epiphany.SeoMetadata</orgPath>
+      <orgName>package.manifest</orgName>
+    </file>
+    
+    <file>
+      <guid>epiphany.seo.metadata.html.html</guid>
+      <orgPath>/App_Plugins/Epiphany.SeoMetadata/views</orgPath>
+      <orgName>epiphany.seo.metadata.html</orgName>
+    </file>
+    
+    <file>
+      <guid>serp1.png.png</guid>
+      <orgPath>/App_Plugins/Epiphany.SeoMetadata/views</orgPath>
+      <orgName>serp1.png</orgName>
+    </file>
+    
+    <file>
+      <guid>serp2.png.png</guid>
+      <orgPath>/App_Plugins/Epiphany.SeoMetadata/views</orgPath>
+      <orgName>serp2.png</orgName>
+    </file>
+    
+    <file>
+      <guid>Epiphany.SeoMetadata.dll.dll</guid>
+      <orgPath>/bin</orgPath>
+      <orgName>Epiphany.SeoMetadata.dll</orgName>
+    </file>
+    
+  </files>
+</umbPackage>
