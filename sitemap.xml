@@ -19,5 +19,13 @@
   <url>
     <loc>http://www.denann.in/home#contact</loc>
   </url>
-
+    <url>
+    <loc>http://www.denann.in/home/services/solar</loc>
+  </url>
+  <url>
+    <loc>http://www.denann.in/home/services/interiors</loc>
+  </url>
+  <url>
+    <loc>http://www.denann.in/home/services/construction</loc>
+  </url>
 </urlset>
