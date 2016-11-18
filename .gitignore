@@ -3,6 +3,7 @@
 
 node_modules
 bower_components
+App_Data
 
 # User-specific files
 *.suo
@@ -25,10 +26,7 @@ bower_components
 bld/
 #[Bb]in/
 [Oo]bj/
-App_Data
-App_Data/Logs/
-App_Data/cache/
-App_Data/TEMP/
+
 
 # Visual Studio 2015 cache/options directory
 .vs/
