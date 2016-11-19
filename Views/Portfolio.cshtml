@@ -36,10 +36,11 @@
 
                         foreach (var imageItem in imagesCollection)
                         {
+                            var resizedUrl = String.Format("{0}?width=650&height=350&bgcolor=fff", imageItem.Url);
 
                             <div class="col-lg-4 col-sm-6">
-                                <a href="@imageItem.Url" class="portfolio-box">
-                                    <img src="@imageItem.Url" class="img-responsive" alt="@imageItem.Name">
+                                <a href="@resizedUrl" class="portfolio-box">
+                                    <img src="@resizedUrl" class="img-responsive" alt="@imageItem.Name">
                                 </a>
                             </div>
                         }

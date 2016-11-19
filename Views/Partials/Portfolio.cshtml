@@ -9,9 +9,11 @@
                     var img = Umbraco.Media(childPage.GetPropertyValue("backgroundImage"));
                     var title = childPage.GetPropertyValue("title");
                     var shortdes = childPage.GetPropertyValue("shortDescription");
+                    var resizedUrl = String.Format("{0}?width=650&height=350&bgcolor=fff", img.Url);
+
                     <div class="col-lg-6 col-sm-8">
-                        <a href="@img.Url" data-title="@title" data-url="@umbraco.library.NiceUrl(childPage.Id)" data-description="@shortdes"  class="portfolio-box">
-                            <img src="@img.Url" data-title="@title" data-url="@umbraco.library.NiceUrl(childPage.Id)" data-description="@shortdes" class="img-responsive" alt="@img.Name">
+                        <a href="@resizedUrl" data-title="@title" data-url="@umbraco.library.NiceUrl(childPage.Id)" data-description="@shortdes" class="portfolio-box">
+                            <img src="@resizedUrl" data-title="@title" data-url="@umbraco.library.NiceUrl(childPage.Id)" data-description="@shortdes" class="img-responsive" alt="@img.Name">
                             <div class="portfolio-box-caption">
                                 <div class="portfolio-box-caption-content">
                                     <div class="project-category text-faded">
