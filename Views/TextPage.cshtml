@@ -5,6 +5,19 @@
 
 
 @{
-    Html.RenderPartial((string)CurrentPage.Name, Model.Content);
+    <section class="bg-primary" id="@CurrentPage.Name.ToLower()">
+
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12 col-md-8">
+                    @CurrentPage.BodyContent
+                </div>
+            </div>
+        </div>
+
+    </section>
+
+    var node = Model.Content.AncestorOrSelf(2).Children.Where("Name = \"Contact\"").FirstOrDefault();
+    Html.RenderPartial("Contact", node);
 
 }

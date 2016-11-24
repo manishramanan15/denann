@@ -49,7 +49,7 @@
                     <h1 id="homeHeading">@CurrentPage.ShortDescription</h1>
                     <hr>
                     <p>@CurrentPage.Description</p>
-                    @if (!String.IsNullOrEmpty(CurrentPage.NextPageText))
+                    @if (!String.IsNullOrEmpty(CurrentPage.NextPageText) && CurrentPage.Name == "Home")
                     {
                         <a href="#about" class="btn btn-primary btn-xl page-scroll">@CurrentPage.NextPageText</a>
                     }
