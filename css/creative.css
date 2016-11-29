@@ -420,6 +420,14 @@ img::-moz-selection {
   color: white;
   background: transparent;
 }
+#owl-demo .item {
+  margin: 3px;
+}
+#owl-demo .item img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
 body {
   webkit-tap-highlight-color: #222222;
 }
