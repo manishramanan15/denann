@@ -1,4 +1,27 @@
-﻿@Styles.Render("~/bundles/styles")
+﻿@*@Styles.Render("~/bundles/styles")*@
+
+<script type="text/javascript">
+
+    function load_css_async(filename) {
+
+
+        var cb = function () {
+            var l = document.createElement('link'); l.rel = 'stylesheet';
+            l.href = filename;
+            var h = document.getElementsByTagName('head')[0]; h.parentNode.insertBefore(l, h);
+        };
+        var raf = requestAnimationFrame || mozRequestAnimationFrame ||
+            webkitRequestAnimationFrame || msRequestAnimationFrame;
+        if (raf) raf(cb);
+        else window.addEventListener('load', cb);
+
+
+    }
+
+</script>
+
+
+@Styles.RenderFormat("<script type=\"text/javascript\">load_css_async('{0}')</script>", "~/bundles/styles")
 
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic,900,900italic">
