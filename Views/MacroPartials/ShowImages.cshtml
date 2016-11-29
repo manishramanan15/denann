@@ -42,7 +42,7 @@
 {
     <div class="item">
 
-        <img src="@item.umbracoFile.src" alt="@item.Name" />
+        <img src="@String.Format("{0}?width=303&height=230&bgcolor=fff",item.umbracoFile.src)" alt="@item.Name" />
 
     </div>
 }
