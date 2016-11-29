@@ -41,9 +41,9 @@
     @if (CurrentPage.BackgroundImage != null && !(CurrentPage.BackgroundImage is Umbraco.Core.Dynamics.DynamicNull))
     {
         var m = Umbraco.Media(CurrentPage.BackgroundImage);
+        var compressedImg = String.Format("{0}?heigh=853&width=1280&quality=90", m.Url);
 
-
-        <header style="background-image: url('@m.Url');">
+        <header style="background-image: url('@compressedImg');">
             <div class="header-content">
                 <div class="header-content-inner">
                     <h1 id="homeHeading">@CurrentPage.ShortDescription</h1>
