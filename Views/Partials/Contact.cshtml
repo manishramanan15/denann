@@ -1,4 +1,10 @@
 @inherits Umbraco.Web.Mvc.UmbracoTemplatePage
+<style>
+    #map {
+        height: 400px;
+        width: 100%;
+    }
+</style>
 
 <section id="@CurrentPage.Name.ToLower()">
     <div class="container">
@@ -19,27 +25,58 @@
         </div>
 
     </div>
-    @*<div class="container">
+    <div class="container">
         <div class="row">
-            <form>
-                <div class="row half">
-                    <div class="6u"><input type="text" class="text" name="name" placeholder="Name" /></div>
-                    <div class="6u"><input type="text" class="text" name="email" placeholder="Email" /></div>
-                </div>
-                <div class="row half">
-                    <div class="12u">
-                        <textarea name="message" placeholder="Message"></textarea>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="12u">
-                        <ul class="actions">
-                            <li><a href="" class="button form" rel="nofollow">Send Message</a></li>
-                        </ul>
-                    </div>
-                </div>
-                <input type="hidden" name="settingsNodeId" value="@CurrentPage.Id" />
-            </form>
+            <div class="col-lg-8 col-lg-offset-2 text-center">
+                <h2 class="section-heading">Address</h2>
+                <hr class="primary">
+                <p>@CurrentPage.Address</p>
+            </div>
         </div>
-    </div>*@
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2">
+                <div id="map"></div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function initMap() {
+            var uluru = {lat: @CurrentPage.Latitude, lng: @CurrentPage.Longitude};
+            var map = new google.maps.Map(document.getElementById('map'), {
+                zoom: 50,
+                center: uluru
+            });
+            var marker = new google.maps.Marker({
+                position: uluru,
+                map: map
+            });
+        }
+    </script>
+    <script async defer
+            src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB35YUjTKlBNBxIqlEkeuLvRIqwehzqQOk&callback=initMap">
+    </script>
+    @*<div class="container">
+            <div class="row">
+                <form>
+                    <div class="row half">
+                        <div class="6u"><input type="text" class="text" name="name" placeholder="Name" /></div>
+                        <div class="6u"><input type="text" class="text" name="email" placeholder="Email" /></div>
+                    </div>
+                    <div class="row half">
+                        <div class="12u">
+                            <textarea name="message" placeholder="Message"></textarea>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="12u">
+                            <ul class="actions">
+                                <li><a href="" class="button form" rel="nofollow">Send Message</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <input type="hidden" name="settingsNodeId" value="@CurrentPage.Id" />
+                </form>
+            </div>
+        </div>*@
 </section>
