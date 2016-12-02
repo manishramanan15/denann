@@ -34,7 +34,7 @@
             </div>
         </div>
         <div class="row">
-            <div class="col-lg-8 col-lg-offset-2">
+            <div class="col-lg-12">
                 <div id="map"></div>
             </div>
         </div>
@@ -44,7 +44,7 @@
         function initMap() {
             var uluru = {lat: @CurrentPage.Latitude, lng: @CurrentPage.Longitude};
             var map = new google.maps.Map(document.getElementById('map'), {
-                zoom: 50,
+                zoom: 40,
                 center: uluru
             });
             var marker = new google.maps.Marker({
